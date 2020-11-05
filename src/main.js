@@ -21,6 +21,10 @@ async function connectDB() {
 connectDB();
 
 const app = new Koa();
+const router = new Router();
+
+// 라우터 설정
+router.use('/api', api.routes()); // api 라우트 적용
 
 // response
 app.use(ctx => {
